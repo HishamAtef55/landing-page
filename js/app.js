@@ -1,39 +1,47 @@
-const navItem = document.getElementById("navbar__list");
-const contents = document.querySelectorAll("section");
+let navItem = document.getElementById("navbar__list");
+let contents = document.querySelectorAll("section");
+
 
 // append li dynamic
-function createListItem() {
-  for (const sec of contents) {
+function Item() {
+  for (const cont of contents) {
     listItem = document.createElement("li");
-    listItem.innerHTML = `<li><a #${sec.id} data-nav="${sec.id}" class="menu__link">${sec.dataset.nav}</a></li>`;
-    navItem.appendChild(listItem);
+    listItem.innerHTML = `<li><a #${cont.id} data-item="${cont.id}" class="menu__link">${cont.dataset.nav}</a></li>`;
+    navItem.appendChild(listItem); 
   }
 }
-createListItem();
+Item();
+
 // styling for the active class with getBoundingClientRect
-window.onscroll = () => {
-  document.querySelectorAll("section").forEach(function (active) {
+window.onscroll = ClientRect
+
+function ClientRect() {
+  contents.forEach(function (element) {
+    const  rect = element.getBoundingClientRect();
     if (
-      active.getBoundingClientRect().top >= -400 &&
-      active.getBoundingClientRect().top <= 150
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     ) {
-      active.classList.add("your-active-class");
-    } else {
-      active.classList.remove("your-active-class");
+      element.classList.add("your-active-class");
+    }
+    else {
+      element.classList.remove("your-active-class");
     }
   });
 };
 // when click on item from navigation menu the link should scroll to the appropriate section
 
-navItem.addEventListener("click", (toSec) => {
-  toSec.preventDefault();
-
-  if (toSec.target.dataset.nav) {
-    document
-      .getElementById(`${toSec.target.dataset.nav}`)
-      .scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => {
-      location.hash = `${toSec.target.dataset.nav}`;
-    }, 300);
-  }
-});
+navItem.addEventListener("click", scrollToContent);
+function scrollToContent(e){
+    e.preventDefault();
+    if (e.target.dataset.item) {
+      document
+        .getElementById(`${e.target.dataset.item}`)
+        .scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        location.hash = `${e.target.dataset.item}`;
+      }, 300);
+    }
+}
