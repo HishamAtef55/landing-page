@@ -1,12 +1,12 @@
-const navList = document.getElementById("navbar__list");
-const sections = Array.from(document.querySelectorAll("section"));
+const navItem = document.getElementById("navbar__list");
+const contents = document.querySelectorAll("section");
 
 // append li dynamic
 function createListItem() {
-  for (const sec of sections) {
+  for (const sec of contents) {
     listItem = document.createElement("li");
-    listItem.innerHTML = `<li><a href="#${sec.id}" data-nav="${sec.id}" class="menu__link">${sec.dataset.nav}</a></li>`;
-    navList.appendChild(listItem);
+    listItem.innerHTML = `<li><a #${sec.id} data-nav="${sec.id}" class="menu__link">${sec.dataset.nav}</a></li>`;
+    navItem.appendChild(listItem);
   }
 }
 createListItem();
@@ -25,7 +25,7 @@ window.onscroll = () => {
 };
 // when click on item from navigation menu the link should scroll to the appropriate section
 
-navList.addEventListener("click", (toSec) => {
+navItem.addEventListener("click", (toSec) => {
   toSec.preventDefault();
 
   if (toSec.target.dataset.nav) {
