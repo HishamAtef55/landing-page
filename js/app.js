@@ -6,7 +6,7 @@ let contents = document.querySelectorAll("section");
 function Item() {
   for (const cont of contents) {
     listItem = document.createElement("li");
-    listItem.innerHTML = `<li><a #${cont.id} data-item="${cont.id}" class="menu__link">${cont.dataset.nav}</a></li>`;
+    listItem.innerHTML = `<li><a #${cont.id} data-item="${cont.id}" class="menu__link">${cont.dataset.item}</a></li>`;
     navItem.appendChild(listItem); 
   }
 }
