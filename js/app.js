@@ -1,20 +1,19 @@
-let navItem = document.getElementById("navbar__list");
+
+let navBar = document.getElementById("navbar__item");
 let contents = document.querySelectorAll("section");
 
 
 // append li dynamic
-function Item() {
-  for (const cont of contents) {
-    listItem = document.createElement("li");
-    listItem.innerHTML = `<li><a #${cont.id} data-item="${cont.id}" class="menu__link">${cont.dataset.item}</a></li>`;
-    navItem.appendChild(listItem); 
-  }
-}
-Item();
+contents.forEach((element)=>{
+  listItem = document.createElement("li");
+  listItem.innerHTML = `<li><a #${element.id} data-item="${element.id}" class="menu__link">${element.dataset.nav}</a></li>`;
+  navBar.appendChild(listItem); 
+})
+
+
 
 // styling for the active class with getBoundingClientRect
-window.onscroll = ClientRect
-
+window.onscroll = ClientRect;
 function ClientRect() {
   contents.forEach(function (element) {
     const  rect = element.getBoundingClientRect();
@@ -33,7 +32,7 @@ function ClientRect() {
 };
 // when click on item from navigation menu the link should scroll to the appropriate section
 
-navItem.addEventListener("click", scrollToContent);
+navBar.addEventListener("click", scrollToContent);
 function scrollToContent(e){
     e.preventDefault();
     if (e.target.dataset.item) {
