@@ -77,10 +77,11 @@ section {
 
 .navbar__menu .menu__link {
   display: block;
-  padding: 1em;
+  padding: 12px;
   font-weight: bold;
   text-decoration: none;
   color: #000;
+
 }
 
 .navbar__menu .menu__link:hover {
@@ -120,6 +121,7 @@ section {
   .landing__container {
     max-width: 50em;
     padding: 4em;
+    width: 100%;
   }
 }
 
@@ -199,6 +201,14 @@ section:nth-of-type(3n + 1) .landing__container::after {
   border-radius: 50%;
   opacity: 0;
   transition: ease 0.5s all;
+}
+
+.active{
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: rgba(0, 0, 0, 0.719);
+  cursor: pointer;
 }
 
 /* ---- Theme State Rules ---- */

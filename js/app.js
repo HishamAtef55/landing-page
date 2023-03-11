@@ -33,12 +33,15 @@ function ClientRect() {
 // when click on item from navigation menu the link should scroll to the appropriate section
 
 navBar.addEventListener("click", scrollToContent);
-function scrollToContent(e){
+function scrollToContent(e){ 
     e.preventDefault();
+  
     if (e.target.dataset.item) {
+     
       document
         .getElementById(`${e.target.dataset.item}`)
         .scrollIntoView({ behavior: "smooth" });
+        e.target.classList.add('active');
       setTimeout(() => {
         location.hash = `${e.target.dataset.item}`;
       }, 300);
