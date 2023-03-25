@@ -59,11 +59,11 @@ function AddActiveClass(id){
 
 }
 function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "navbar__menu") {
-    x.className += " responsive";
+  let icon = document.getElementById("myTopnav");
+  if (icon.className === "navbar__menu") {
+    icon.className += " responsive";
   } else {
-    x.className = "navbar__menu";
+    icon.className = "navbar__menu";
   }
 }
 

@@ -83,12 +83,12 @@ section {
   color: #000;
 
 }
-
+/* 
 .navbar__menu .menu__link:hover {
   background: #333;
   color: #fff;
   transition: ease 0.3s all;
-}
+} */
 
 /* Header Styles */
 .page__header {
@@ -207,7 +207,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
   border: none;
   outline: none;
   padding: 10px 16px;
-  background-color: rgba(0, 0, 0, 0.719);
+  background: rgb(169, 17, 32);
   cursor: pointer;
 }
 
