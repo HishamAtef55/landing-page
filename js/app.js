@@ -16,6 +16,7 @@ contents.forEach((element)=>{
 window.onscroll = ClientRect;
 function ClientRect() {
   contents.forEach(function (element) {
+ 
     const  rect = element.getBoundingClientRect();
 
     if (
@@ -55,3 +56,12 @@ function AddActiveClass(id){
 
 
 }
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "navbar__menu") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar__menu";
+  }
+}
+
