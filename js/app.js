@@ -20,7 +20,9 @@ function ClientRect() {
     const  rect = element.getBoundingClientRect();
 
     if (
-      element.getBoundingClientRect().top<window.innerHeight
+     rect.bottom<window.innerHeight
+     
+     
     ) {
       AddActiveClass(element.id)
      
